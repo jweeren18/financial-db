@@ -1,8 +1,3 @@
-
-
-===== LOCAL BACKUP (appended) =====
-
-
 <<<<<<< HEAD
 # financial-db
 =======
