@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: financial-db-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: financial-db-app
+  template:
+    metadata:
+      labels:
+        app: financial-db-app
+    spec:
+      containers:
+        - name: app
+          image: YOUR_REGISTRY/financial-db-app:latest
+          ports:
+            - containerPort: 8501
+          env:
+            - name: PYTHONPATH
+              value: /app

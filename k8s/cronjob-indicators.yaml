@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: compute-indicators
+spec:
+  schedule: "0 6 * * *" # daily at 06:00
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: compute
+              image: YOUR_REGISTRY/financial-db-worker:latest
+              command: ["python", "-m", "data.compute_indicators", "--tickers", "ALL"]
+              env:
+                - name: DATABASE_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: financial-db-secrets
+                      key: database_url
+          restartPolicy: OnFailure

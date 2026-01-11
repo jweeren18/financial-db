@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: financial-db-api
+spec:
+  selector:
+    app: financial-db-api
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 8001
+  type: ClusterIP
