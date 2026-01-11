@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from typing import List
-from db import get_session
-from models import Price
+from database.db import get_session
+from database.models import Price
 from sqlalchemy import select
 import pandas as pd
 

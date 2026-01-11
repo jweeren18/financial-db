@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from db import get_session
-from models import Price
+from database.db import get_session
+from database.models import Price
 from sqlalchemy import select
 import plotly.graph_objects as go
 

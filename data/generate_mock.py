@@ -8,8 +8,8 @@ This writes directly into the existing `data.db` using the project's SQLAlchemy 
 from datetime import datetime
 import numpy as np
 import pandas as pd
-from db import get_session
-from models import Price
+from database.db import get_session
+from database.models import Price
 
 
 def generate_gbm(start_price=100.0, mu=0.05, sigma=0.2, days=252, seed=42):
